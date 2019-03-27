@@ -7,27 +7,24 @@ using System.Threading.Tasks;
 
 namespace ThunderFighter
 {
-    public abstract class Fighter
+    public abstract class Bullet
     {
-        public Image BackGroundImag
+        Layout LayoutAttr
         {
             get;
             set;
         }
-
-        public Layout LayoutAttr
+        Image BackGroundImage
         {
             get;
             set;
         }
-
-        public SpeedType SpeedTypeAttr
+        SpeedType SpeedTypeAttr
         {
             get;
             set;
         }
-
-        public RankLevel RankTypeAttr
+        PowerLevel PowerTypeAttr
         {
             get;
             set;
@@ -37,12 +34,9 @@ namespace ThunderFighter
 
         public abstract void ShootEnemy();
 
-        public abstract void ShootbyEnemy();
-
         public abstract void Move();
 
         public abstract void Destroy();
 
-        public abstract void Dispose();
     }
 }

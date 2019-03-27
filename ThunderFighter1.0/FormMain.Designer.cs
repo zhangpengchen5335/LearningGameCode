@@ -30,14 +30,17 @@
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 555);
+            this.ClientSize = new System.Drawing.Size(435, 618);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "Form1";
+            this.Name = "FormMain";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FormMain_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormMain_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FormMain_KeyUp);
             this.ResumeLayout(false);
 
         }

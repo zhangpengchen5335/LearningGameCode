@@ -22,4 +22,21 @@ namespace ThunderFighter
 
         }
     }
+
+    public class BulletFactory
+    {
+        static public Bullet GetBullet(BulletType bulletType)
+        {
+            switch (bulletType)
+            {
+                case BulletType.MyBullet:
+                    return new MyBullet();
+                case BulletType.EnemyBullet:
+                    return new EnemyBullet();
+                default:
+                    return null;
+            }
+
+        }
+    }
 }

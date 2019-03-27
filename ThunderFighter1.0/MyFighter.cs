@@ -24,60 +24,9 @@ namespace ThunderFighter
         }
         private static MyFighter _instance;
 
-
-
-        public Image BackGroundImag
-        {
-            get
-            {
-                return _backGroundImag;
-            }
-            set
-            {
-                _backGroundImag = value;
-            }
-        }
-        public Layout LayoutAttr
-        {
-            get
-            {
-                return _layoutAttr;
-            }
-            set
-            {
-                _layoutAttr = value;
-            }
-        }
-        public SpeedType SpeedTypeAttr
-        {
-            get
-            {
-                return _speedTypeAttr;
-            }
-            set
-            {
-                _speedTypeAttr = value;
-            }
-        }
-        public RankType RankTypeAttr
-        {
-            get
-            {
-                return _rankTypeAttr;
-            }
-            set
-            {
-                _rankTypeAttr = value;
-            }
-        }
-
         public int ResurrectionCount { get => _resurrectionCount; }
         public int Score { get => _score; set => _score = value; }
 
-        private Image _backGroundImag = null;
-        private Layout _layoutAttr = null;
-        private SpeedType _speedTypeAttr = SpeedType.Level1;
-        private RankType _rankTypeAttr = RankType.Level1;
         private int _resurrectionCount = 3;
         private int _score = 0;
 
@@ -106,6 +55,16 @@ namespace ThunderFighter
             throw new NotImplementedException();
         }
 
+        public void Escalate()
+        {
+            if (BackGroundImag != null)
+            {
+                BackGroundImag.Dispose();
+                BackGroundImag = null;
+            }
+            BackGroundImag = Image.FromFile(Config.RESOURCEPATH + "");
+        }
+
         public void GetScore()
         {
 
@@ -118,6 +77,11 @@ namespace ThunderFighter
         public void EnemyDestroyEventCallBack(object sender, DestroyEventArgs args)
         {
 
+        }
+
+        public override void Dispose()
+        {
+            
         }
     }
 }

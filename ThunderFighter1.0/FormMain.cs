@@ -13,15 +13,27 @@ namespace ThunderFighter
     public partial class FormMain : Form
     {
         private string _lastKey = string.Empty;
-        private long 
+        private long _lastEnterKeyTime = 0;
         public FormMain()
         {
             InitializeComponent();
         }
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            
+        }
+        private void FormMain_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void FormMain_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
 
         private void StartGame()
         {
-            Fighter myFighter = FighterFactory.GetFighter(FighterType.MyFighter);
 
         }
 
@@ -35,5 +47,7 @@ namespace ThunderFighter
 
             base.WndProc(ref m);
         }
+
+       
     }
 }
