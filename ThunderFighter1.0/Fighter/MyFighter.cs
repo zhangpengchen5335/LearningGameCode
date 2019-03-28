@@ -64,7 +64,7 @@ namespace ThunderFighter
                 BackGroundImag.Dispose();
                 BackGroundImag = null;
             }
-            BackGroundImag = Image.FromFile(Config.RESOURCEPATH + Common.SUPER_FIGHTER_IMAGE);
+            BackGroundImag = Image.FromFile(Common.SUPER_FIGHTER_IMAGE);
         }
 
         public void Downgrade()

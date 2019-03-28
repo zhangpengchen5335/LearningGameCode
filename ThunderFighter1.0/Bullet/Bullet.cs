@@ -30,6 +30,12 @@ namespace ThunderFighter
             set;
         }
 
+        protected MyForm MyForm
+        {
+            get;
+            set;
+        }
+
         public bool BTrackBullet = false;
 
         public delegate void HitEnemyEventDel(object sender, HitEnemyEventArgs args);

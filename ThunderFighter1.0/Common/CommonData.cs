@@ -10,27 +10,49 @@ namespace ThunderFighter
 
     public class Common
     {
-        public static string SUPER_FIGHTER_IMAGE = "超级战机.jpg";
-        public static string NORMAL_FIGHTER_IMAGE = "普通战机.jpg";
-        public static string NORMAL_ENEMY_FIGHTER_IMAGE = "敌人小型战机.jpg";
-        public static string SUPER_ENEMY_FIGHTER_IMAGE = "敌人大型战机.jpg";
-        public static string NORMAL_ENEMY_BULLET_IMAGE = "敌人小型战机子弹.jpg";
-        public static string SUPER_ENEMY_BULLET_IMAGE= "敌人大型战机子弹.jpg";
-        public static string NORMAL_BULLET_IMAGE = "普通战机子弹.jpg";
-        public static string SUPER_BULLET_IMAGE = "超级战机子弹.jpg";
+
+        public static string RESOURCEPATH = AppDomain.CurrentDomain.BaseDirectory + @"Resource\";
+
+        public static string SUPER_FIGHTER_IMAGE = RESOURCEPATH + "超级战机.jpg";
+        public static string NORMAL_FIGHTER_IMAGE = RESOURCEPATH + "普通战机.jpg";
+        public static string NORMAL_ENEMY_FIGHTER_IMAGE = RESOURCEPATH + "敌人小型战机.jpg";
+        public static string SUPER_ENEMY_FIGHTER_IMAGE = RESOURCEPATH + "敌人大型战机.jpg";
+        public static string NORMAL_ENEMY_BULLET_IMAGE = RESOURCEPATH + "敌人小型战机子弹.jpg";
+        public static string SUPER_ENEMY_BULLET_IMAGE= RESOURCEPATH + "敌人大型战机子弹.jpg";
+        public static string NORMAL_BULLET_IMAGE = RESOURCEPATH + "普通战机子弹.jpg";
+        public static string SUPER_BULLET_IMAGE = RESOURCEPATH + "超级战机子弹.jpg";
 
         public static MyErrorBox MY_ERROR_BOX = new MyErrorBox();
+
+        public static Size MY_NORMAL_FIGHTER_SIZE = new Size(26, 36);
+        public static Size MY_SUPER_FIGHTER_SIZE = new Size(36, 46);
+        public static Size MY_NORMAL_BULLET_SIZE = new Size(4, 10);
+        public static Size MY_SUPER_BULLET_SIZE = new Size(16, 10);
+
+        public static Size ENEMY_NORMAL_FIGHTER_SIZE = new Size(16, 26);
+        public static Size ENEMY_SUPER_FIGHTER_SIZE = new Size(40, 26);
+        public static Size ENEMY_NORMAL_BULLET_SIZE = new Size(6, 6);
+        public static Size ENEMY_SUPER_BULLET_SIZE = new Size(10, 10);
     }
 
     public class Config
     {
         private Level _level = Level.Level1;
-
-        public static string RESOURCEPATH = AppDomain.CurrentDomain.BaseDirectory + @"Resource\";
     }
 
     public class Layout
     {
+        public Layout()
+        {
+
+        }
+        public Layout(int x, int y, int width ,int height)
+        {
+            _x = x;
+            _y = y;
+            _width = width;
+            _height = height;
+        }
         public int X { get => _x; set => _x = value; }
         public int Y { get => _y; set => _y = value; }
         public int Width { get => _width; set => _width = value; }

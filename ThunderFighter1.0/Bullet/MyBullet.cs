@@ -10,6 +10,7 @@ namespace ThunderFighter
     public class MyBullet : Bullet
     {
         private Thread _thread = null;
+        private bool _bStop = false;
         public override void Create(Fighter fighter)
         {
             MyFighter myFighter = fighter as MyFighter;
@@ -25,19 +26,32 @@ namespace ThunderFighter
             }
             if (_thread == null)
             {
-                _thread = new Thread(ThreadCallBakc);
+                _thread = new Thread(ThreadCallBack);
                 _thread.Start();
             }
         }
 
         public override void Destroy()
         {
-            
+            Dispose();
         }
 
         public override void Dispose()
         {
-            
+            if(_thread != null)
+            {
+                _bStop = true;
+                if(_thread.Join(1000))
+                {
+                    _thread.Abort();
+                    _thread = null;
+                }
+            }
+            if(BackGroundImage != null)
+            {
+                BackGroundImage.Dispose();
+                BackGroundImage = null;
+            }
         }
 
         public override void Move()
@@ -50,9 +64,12 @@ namespace ThunderFighter
             
         }
 
-        private void ThreadCallBakc(object sender)
+        private void ThreadCallBack(object sender)
         {
+            while(!_bStop)
+            {
 
+            }
         }
     }
 }

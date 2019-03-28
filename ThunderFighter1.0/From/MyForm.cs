@@ -12,6 +12,8 @@ namespace ThunderFighter
 {
     public partial class MyForm : Form
     {
+        private delegate void SetLayoutDel(Layout layout);
+        private delegate void SetImageDel(string imagePath);
         public MyForm()
         {
             InitializeComponent();
@@ -20,14 +22,29 @@ namespace ThunderFighter
 
         public void SetImage(string imagePath)
         {
-            try
+            if (!InvokeRequired)
             {
-                Image image = Image.FromFile(imagePath);
+                Image image = CommonHelper.GetImageg(imagePath);//Image.FromFile(imagePath);
                 BackgroundImage = image;
             }
-            catch(Exception ex)
+            else
             {
-                Common.MY_ERROR_BOX.SetMsg(ex.ToString());
+                SetImageDel cs = new SetImageDel(SetImage);
+                Invoke(cs, new object[] { imagePath });
+            }
+        }
+
+        public void SetLayout(Layout layout)
+        {
+            if(!InvokeRequired)
+            {
+                Location = new Point(layout.X, layout.Y);
+                Size = new Size(layout.Width, layout.Height);
+            }
+            else
+            {
+                SetLayoutDel cs = new SetLayoutDel(SetLayout);
+                Invoke(cs, new object[] { layout });
             }
         }
     }
