@@ -46,41 +46,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bullet.cs" />
-    <Compile Include="CommonData.cs" />
-    <Compile Include="EnemyBullet.cs" />
-    <Compile Include="EnemyFighter.cs" />
-    <Compile Include="Factory.cs" />
-    <Compile Include="FormMain.cs">
+    <Compile Include="Bullet\Bullet.cs" />
+    <Compile Include="Common\CommonData.cs" />
+    <Compile Include="Common\CommonHelper.cs" />
+    <Compile Include="Bullet\EnemyBullet.cs" />
+    <Compile Include="Fighter\EnemyFighter.cs" />
+    <Compile Include="Factory\Factory.cs" />
+    <Compile Include="From\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMain.Designer.cs">
+    <Compile Include="From\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fighter.cs" />
-    <Compile Include="MyBullet.cs" />
-    <Compile Include="MyErrorBox.cs">
+    <Compile Include="Fighter\Fighter.cs" />
+    <Compile Include="Bullet\MyBullet.cs" />
+    <Compile Include="From\MyErrorBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyErrorBox.Designer.cs">
+    <Compile Include="From\MyErrorBox.Designer.cs">
       <DependentUpon>MyErrorBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyFighter.cs" />
-    <Compile Include="MyForm.cs">
+    <Compile Include="Fighter\MyFighter.cs" />
+    <Compile Include="From\MyForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MyForm.Designer.cs">
+    <Compile Include="From\MyForm.Designer.cs">
       <DependentUpon>MyForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormMain.resx">
+    <EmbeddedResource Include="From\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyErrorBox.resx">
+    <EmbeddedResource Include="From\MyErrorBox.resx">
       <DependentUpon>MyErrorBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyForm.resx">
+    <EmbeddedResource Include="From\MyForm.resx">
       <DependentUpon>MyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

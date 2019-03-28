@@ -30,6 +30,11 @@ namespace ThunderFighter
             set;
         }
 
+        public bool BTrackBullet = false;
+
+        public delegate void HitEnemyEventDel(object sender, HitEnemyEventArgs args);
+        public event HitEnemyEventDel HitEnemyEvent;
+
         public abstract void Create();
 
         public abstract void ShootEnemy();
@@ -38,5 +43,6 @@ namespace ThunderFighter
 
         public abstract void Destroy();
 
+        public abstract void Dispose();
     }
 }

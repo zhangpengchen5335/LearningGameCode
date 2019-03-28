@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ namespace ThunderFighter
         public static string SUPER_ENEMY_FIGHTER_IMAGE = "敌人大型战机.jpg";
         public static string NORMAL_ENEMY_BULLET_IMAGE = "敌人小型战机子弹.jpg";
         public static string SUPER_ENEMY_BULLET_IMAGE= "敌人大型战机子弹.jpg";
-        public static string NORMAL_BULLET_IMAGE = "普通战机子弹 .jpg";
+        public static string NORMAL_BULLET_IMAGE = "普通战机子弹.jpg";
         public static string SUPER_BULLET_IMAGE = "超级战机子弹.jpg";
 
         public static MyErrorBox MY_ERROR_BOX = new MyErrorBox();
@@ -34,11 +35,25 @@ namespace ThunderFighter
         public int Y { get => _y; set => _y = value; }
         public int Width { get => _width; set => _width = value; }
         public int Height { get => _height; set => _height = value; }
+        public EdgePoint EdgePointAttr { get => _edgePointAttr; set => _edgePointAttr = value; }
 
         private int _x;
         private int _y;
         private int _width;
         private int _height;
+        private EdgePoint _edgePointAttr;
+        public Rectangle ToRectangle()
+        {
+            return new Rectangle(new Point(X, Y), new Size(Width, Height)); ;
+        }
+    }
+
+    public class EdgePoint
+    {
+        public Point LeftPoint;
+        public Point RightPoint;
+        public Point TopPoint;
+        public Point ButtomPoint;
     }
 
     /// <summary>
@@ -121,14 +136,21 @@ namespace ThunderFighter
 
     public class HitEnemyEventArgs : EventArgs
     {
-        public HitEnemyEventArgs(PowerLevel powerLevel)
+        public HitEnemyEventArgs(PowerLevel powerLevel, int id)
         {
             PowerLevelAttr = powerLevel;
+            ID = id;
         }
         public PowerLevel PowerLevelAttr
         {
             get;
             set;
         }
+        public int ID
+        {
+            get;
+            set;
+        }
     }
+
 }
