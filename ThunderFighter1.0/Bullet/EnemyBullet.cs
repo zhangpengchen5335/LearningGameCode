@@ -8,7 +8,7 @@ namespace ThunderFighter
 {
     public class EnemyBullet : Bullet
     {
-        public override void Create()
+        public override void Create(Fighter fighter)
         {
         }
 

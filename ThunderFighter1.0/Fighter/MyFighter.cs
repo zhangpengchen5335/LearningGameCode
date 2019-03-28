@@ -26,10 +26,11 @@ namespace ThunderFighter
 
         public int ResurrectionCount { get => _resurrectionCount; }
         public int Score { get => _score; set => _score = value; }
+        public bool BSuperFight { get => _bSuperFight; set => _bSuperFight = value; }
 
         private int _resurrectionCount = 3;
         private int _score = 0;
-
+        private bool _bSuperFight = false;
         public override void Create()
         {
             throw new NotImplementedException();
@@ -57,12 +58,24 @@ namespace ThunderFighter
 
         public void Escalate()
         {
+            _bSuperFight = false;
             if (BackGroundImag != null)
             {
                 BackGroundImag.Dispose();
                 BackGroundImag = null;
             }
-            BackGroundImag = Image.FromFile(Config.RESOURCEPATH + "");
+            BackGroundImag = Image.FromFile(Config.RESOURCEPATH + Common.SUPER_FIGHTER_IMAGE);
+        }
+
+        public void Downgrade()
+        {
+            _bSuperFight = false;
+            if (BackGroundImag != null)
+            {
+                BackGroundImag.Dispose();
+                BackGroundImag = null;
+            }
+            BackGroundImag = CommonHelper.GetImageg(Common.NORMAL_FIGHTER_IMAGE);
         }
 
         public void GetScore()

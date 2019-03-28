@@ -9,22 +9,22 @@ namespace ThunderFighter
 {
     public abstract class Bullet
     {
-        Layout LayoutAttr
+        public Layout LayoutAttr
         {
             get;
             set;
         }
-        Image BackGroundImage
+        public Image BackGroundImage
         {
             get;
             set;
         }
-        SpeedType SpeedTypeAttr
+        public SpeedType SpeedTypeAttr
         {
             get;
             set;
         }
-        PowerLevel PowerTypeAttr
+        public PowerLevel PowerTypeAttr
         {
             get;
             set;
@@ -35,7 +35,7 @@ namespace ThunderFighter
         public delegate void HitEnemyEventDel(object sender, HitEnemyEventArgs args);
         public event HitEnemyEventDel HitEnemyEvent;
 
-        public abstract void Create();
+        public abstract void Create(Fighter fighter);
 
         public abstract void ShootEnemy();
 

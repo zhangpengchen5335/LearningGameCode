@@ -15,6 +15,18 @@ namespace ThunderFighter
             return rect.Contains(edgePoint.LeftPoint) || rect.Contains(edgePoint.RightPoint)|| rect.Contains(edgePoint.TopPoint)|| rect.Contains(edgePoint.ButtomPoint);
         }
 
-        
+        public static Image GetImageg(string Name)
+        {
+            try
+            {
+                Image image = Image.FromFile(Config.RESOURCEPATH + Name);
+                return image;
+            }
+            catch(Exception ex)
+            {
+                Common.MY_ERROR_BOX.SetMsg(ex.ToString());
+                return null;
+            }
+        }
     }
 }

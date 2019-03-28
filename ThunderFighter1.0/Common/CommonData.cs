@@ -82,7 +82,9 @@ namespace ThunderFighter
     public enum SpeedType
     {
         Level1,
-        Level2
+        Level2,
+        Level3,
+        Level4
     }
     /// <summary>
     /// 等级（战机血量，威力等等）
