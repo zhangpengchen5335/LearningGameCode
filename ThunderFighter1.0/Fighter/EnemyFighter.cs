@@ -31,9 +31,8 @@ namespace ThunderFighter
             throw new NotImplementedException();
         }
 
-        public override void Move()
+        public override void Move(Point point)
         {
-            throw new NotImplementedException();
         }
 
         public override void Destroy()

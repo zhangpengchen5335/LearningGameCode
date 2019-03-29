@@ -45,7 +45,7 @@ namespace ThunderFighter
 
         public abstract void ShootEnemy();
 
-        public abstract void Move();
+        public abstract void Move(Point point);
 
         public abstract void Destroy();
 

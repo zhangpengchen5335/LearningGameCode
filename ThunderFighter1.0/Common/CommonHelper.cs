@@ -46,6 +46,10 @@ namespace ThunderFighter
                     layout.Width = Common.ENEMY_SUPER_BULLET_SIZE.Width;
                     layout.Height = Common.ENEMY_SUPER_BULLET_SIZE.Height;
                     break;
+                case RankLevel.Level3:
+                    break;
+                case RankLevel.Level4:
+                    break;
             }
             return layout;
         }

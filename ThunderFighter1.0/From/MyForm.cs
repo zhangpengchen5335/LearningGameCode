@@ -47,5 +47,15 @@ namespace ThunderFighter
                 Invoke(cs, new object[] { layout });
             }
         }
+
+        public new void Dispose()
+        {
+            if(BackgroundImage != null)
+            {
+                BackgroundImage.Dispose();
+                BackgroundImage = null;
+            }
+            base.Dispose();
+        }
     }
 }

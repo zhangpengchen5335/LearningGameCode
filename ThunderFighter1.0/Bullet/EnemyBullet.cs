@@ -45,7 +45,7 @@ namespace ThunderFighter
         {
         }
 
-        public override void Move()
+        public override void Move(Point point)
         {
         }
 

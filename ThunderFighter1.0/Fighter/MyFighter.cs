@@ -46,7 +46,7 @@ namespace ThunderFighter
             throw new NotImplementedException();
         }
 
-        public override void Move()
+        public override void Move(Point point)
         {
             throw new NotImplementedException();
         }
@@ -88,6 +88,11 @@ namespace ThunderFighter
         }
 
         public void EnemyDestroyEventCallBack(object sender, DestroyEventArgs args)
+        {
+
+        }
+
+        public void HitByEnemyEventCallBack(object sender, HitEnemyEventArgs args)
         {
 
         }

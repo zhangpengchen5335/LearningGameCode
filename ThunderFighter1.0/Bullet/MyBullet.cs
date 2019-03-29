@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -30,9 +31,10 @@ namespace ThunderFighter
                 _thread.Start();
             }
         }
-
+            
         public override void Destroy()
         {
+
             Dispose();
         }
 
@@ -47,14 +49,14 @@ namespace ThunderFighter
                     _thread = null;
                 }
             }
-            if(BackGroundImage != null)
+            if (MyForm != null)
             {
-                BackGroundImage.Dispose();
-                BackGroundImage = null;
+                MyForm.Dispose();
+                MyForm = null;
             }
         }
 
-        public override void Move()
+        public override void Move(Point point)
         {
             
         }
